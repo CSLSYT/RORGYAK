@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vnev: MyString
+  knev: MyString
+  email: MyString
+  phone: MyString
+  position: MyString
+  resume: MyString
+  message: MyText
+
+two:
+  vnev: MyString
+  knev: MyString
+  email: MyString
+  phone: MyString
+  position: MyString
+  resume: MyString
+  message: MyText

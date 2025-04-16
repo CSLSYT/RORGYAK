@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álláspályázat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="KP Kft logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#">Referenciák</a></li>
+                <li><a href="#">Álláslehetőségek</a></li>
+                <li><a href="#">Pályázatok</a></li>
+                <li><a href="#">Kapcsolat</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="contact-form">
+        <h2>Csatlakozzon csapatunkhoz</h2>
+        <form>
+            <label for="name">Név</label>
+            <div>
+                <input type="text" id="first-name" placeholder="Vezetéknév">
+                <input type="text" id="last-name" placeholder="Keresztnév">
+            </div>
+            
+            <label for="email">E-mail*</label>
+            <input type="email" id="email" required>
+            
+            <label for="phone">Telefonszám*</label>
+            <input type="tel" id="phone" required>
+            
+            <label for="position">Betöltetlen pozíciónk*</label>
+            <select id="position">
+                <option>Kérem válasszon!</option>
+                <option>Projektvezető</option>
+                <option>Nehézgépkezelő</option>
+            </select>
+            <p>
+            <label for="cv">Önéletrajz</label>
+            <input type="file" id="cv">
+            
+            <label for="message">Személyes üzenet*</label>
+            <textarea id="message" required></textarea>
+            
+            <p>A csillaggal * jelölt mezők kitöltése kötelező!</p>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">News</a>
+            <a href="#">Read Me</a>
+        </nav>
+    </footer>
+</body>
+</html>

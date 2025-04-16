@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Kitalált Közmű" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+<%= favicon_link_tag 'favicon.png', rel: 'icon', type: 'image/png' %>
+
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app %>
+  </head>
+
+  <body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="/kp/home">
+          <%= image_tag "favicon.png", alt:"Weboldal logo" %>
+        </a>
+      </div>
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="/kp/reference">Referenciák</a>
+          </li>
+          <li>
+            <a href="#">Álláslehetőségek</a>
+          </li>
+          <li>
+            <a href="#">Pályázatok</a>
+          </li>
+          <li>
+            <a href="#">Céginformáció</a>
+          </li>
+          <li>
+            <a class="btn" href="#">Kapcsolat</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+    <%= yield %>
+  </body>
+</html>

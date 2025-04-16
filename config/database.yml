@@ -1,0 +1,23 @@
+development:
+  adapter: mysql2
+  encoding: utf8mb4
+  database: gyakorlat_development
+  username: root
+  password: csolos
+  host: localhost
+
+test:
+  adapter: mysql2
+  encoding: utf8mb4
+  database: gyakorlat_test
+  username: root
+  password: csolos
+  host: localhost
+
+production:
+  adapter: mysql2
+  encoding: utf8mb4
+  database: gyakorlat_production
+  username: root
+  password: csolos
+  host: localhost

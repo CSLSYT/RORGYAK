@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitalált Közmű Kft. - Referenciák</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+      function searchReferences() {
+          let input = document.getElementById('searchInput').value.toLowerCase();
+          let items = document.getElementsByClassName('reference-item');
+
+          for (let item of items) {
+              let title = item.getElementsByTagName('h3')[0].innerText.toLowerCase();
+              if (title.includes(input)) {
+                  item.style.display = 'flex';
+              } else {
+                  item.style.display = 'none';
+              }
+          }
+      }
+  </script>
+</head>
+<body>
+<section class="container">
+  <div class="search-bar-container">
+    <h2>Referencia Munkáink</h2>
+    <input type="text" id="searchInput" onkeyup="searchReferences()" placeholder="Keresés a munkák között...">
+  </div>
+
+  <% @works.each do |work| %>
+    <div class="container" id="<%= dom_id(work) %>">
+      <div class="work_image" style="float: left; width: 200px; margin-right: 20px;">
+        <%= image_tag 'munka1.jpg', alt: 'Munka képe', size: '200x200' %>
+      </div>
+      <div class="work_data" style="overflow: hidden;">
+        <p class="workp">
+          <strong>Name:</strong>
+          <%= link_to work.name, work_path(work) %>
+        </p>
+
+        <p class="workp">
+          <strong>Client:</strong>
+          <%= work.client %>
+        </p>
+
+        <p class="workp">
+          <strong>Location:</strong>
+          <%= work.location %>
+        </p>
+
+        <p class="workp">
+          <strong>Year:</strong>
+          <%= work.year %>
+        </p>
+
+        <p class="workp">
+          <strong>Value:</strong>
+          <%= work.value %>
+        </p>
+
+        <p class="workp">
+          <strong>Architect:</strong>
+          <%= work.architect %>
+        </p>
+
+        <p class="workp">
+          <strong>Description:</strong>
+          <%= work.description %>
+        </p>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+
+</section>
+</body>
+</html>
+
