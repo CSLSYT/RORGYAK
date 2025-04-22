@@ -25,55 +25,38 @@
 <section class="container">
   <div class="search-bar-container">
     <h2>Referencia Munkáink</h2>
-    <input type="text" id="searchInput" onkeyup="searchReferences()" placeholder="Keresés a munkák között...">
   </div>
+</section>
+
+<section class="container">
 
   <% @works.each do |work| %>
-    <div class="container" id="<%= dom_id(work) %>">
-      <div class="work_image" style="float: left; width: 200px; margin-right: 20px;">
-        <%= image_tag 'munka1.jpg', alt: 'Munka képe', size: '200x200' %>
-      </div>
-      <div class="work_data" style="overflow: hidden;">
-        <p class="workp">
-          <strong>Name:</strong>
-          <%= link_to work.name, work_path(work) %>
-        </p>
+    <div class="" id="<%= dom_id(work) %>">
+      <div class="project-container">
 
-        <p class="workp">
-          <strong>Client:</strong>
-          <%= work.client %>
-        </p>
-
-        <p class="workp">
-          <strong>Location:</strong>
-          <%= work.location %>
-        </p>
-
-        <p class="workp">
-          <strong>Year:</strong>
-          <%= work.year %>
-        </p>
-
-        <p class="workp">
-          <strong>Value:</strong>
-          <%= work.value %>
-        </p>
-
-        <p class="workp">
-          <strong>Architect:</strong>
-          <%= work.architect %>
-        </p>
-
-        <p class="workp">
-          <strong>Description:</strong>
-          <%= work.description %>
-        </p>
-      </div>
+    <div class="project-image">
+      <%= image_tag "munka1.jpg", alt: "Project Image" %>
     </div>
-    <hr>
+
+        <div class="project-description">
+          <p><strong>Description:</strong><%=work.description%>  </p>
+        </div>
+        <div class="project-details">
+          <p><strong>Name:</strong> <%= work.name %></p>
+          <p><strong>Client:</strong> <%= work.client %></p>
+          <p><strong>Location:</strong> <%= work.location %></p>
+          <p><strong>Year:</strong> <%= work.year %></p>
+          <p><strong>Value:</strong> <%= work.value %></p>
+          <p><strong>Architect:</strong> <%= work.architect %></p>
+        </div>
+      </div>
+  </div>
+
   <% end %>
 
 </section>
+
+
 </body>
 </html>
 

@@ -9,6 +9,9 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "rails_admin", "data-turbo-track": "reload" %>
+
+
     <%= javascript_importmap_tags %>
 
 
@@ -29,7 +32,7 @@
   </head>
 
   <body>
-  <nav class="navbar">
+  <nav class="navbar text-md">
     <div class="container">
       <div class="logo">
         <a href="/kp/home">
@@ -48,7 +51,7 @@
             <a href="#">Pályázatok</a>
           </li>
           <li>
-            <a href="#">Céginformáció</a>
+            <a href="/kp/about">Céginformációk</a>
           </li>
           <li>
             <a class="btn" href="#">Kapcsolat</a>
@@ -60,4 +63,31 @@
   </nav>
     <%= yield %>
   </body>
+  <!---Footer--->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+        <a href="/kp/home">
+          <%= image_tag "logowhite_800x173.png", :alt => "logo szoveggel" %>
+        </a>
+        </div>
+          <h3 class="text-md">
+            Központi telephely nyitvatartás:
+          </h3>
+        <p class="text-sm">
+          H-P: 9:00 - 17:00
+        </p>
+        <p class="text-sm">
+          Sz-V: Zárva
+        </p>
+        <p class="text-sm">
+          Iroda címe: 1117, Budapest, Magyar Tudósok Körútja 2-Q épület
+        </p>
+        <p class="text-sm">
+          Telefonszám: +36 1 234 5000
+        </p>
+      </div>
+    </div>
+  </footer>
 </html>

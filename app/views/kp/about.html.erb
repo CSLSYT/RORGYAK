@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitalált Közmű Kft. - Referenciák</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+      function searchReferences() {
+          let input = document.getElementById('searchInput').value.toLowerCase();
+          let items = document.getElementsByClassName('reference-item');
+
+          for (let item of items) {
+              let title = item.getElementsByTagName('h3')[0].innerText.toLowerCase();
+              if (title.includes(input)) {
+                  item.style.display = 'flex';
+              } else {
+                  item.style.display = 'none';
+              }
+          }
+      }
+  </script>
+</head>
+<body>
+<div class="container">
+<h2 class="text-xl">
+  Céginformációk:
+</h2>
+</div>
+<div class="about-container">
+
+  <div class="about-left text-md text-justify">
+    <p>
+    Cégünk 2011-ben kezdte tevékenységét. A társaság ügyvezetője Lengyel Árpád, aki a Kft. megalakulását megelőzően több kiemelkedő projektet vezetett, melynek során több mint 20 éves szakmai tapasztalatra tett szert a közmű- és útépítés terén. Fő profilunk a víz- és csatornahálózatok, továbbá a vízépítéshez kapcsolódó olajfogó-, tüzivíztározó műtárgyak építése, utak és parkolók kivitelezése. Rendelkezünk száloptikás csatorna kamerával, így speciális helyeken is vizsgálatokat tudunk végezni. A kivitelezéssel összefüggő tervezési-, engedélyezési feladatok, valamint az üzemeltető cégek felé történő átadások teljeskörű ügyintézését vállaljuk.
+    </p>
+    <p>
+    A társaság vezetője és állandó partnerei nagy szakmai rutinra tettek szert, és ismerve a közművek követelményrendszerét, korrekt módon tudják azt a megrendelők igényeivel összehangolni. Vállalkozásunk alapvetően a minőségi munkára, a korrekt üzleti kapcsolatokra és a megbízhatóságra, valamint a piacon való hosszú idejű megmaradásra fekteti a hangsúlyt.
+    </p>
+    <p>
+    Szakmai elismertségünket jelzi, hogy a HUMAN BioPlazma Kft. Gyógyszergyár területén lévő teljes víz- csatorna közmű hálózat karbantartását mi végezzük. Kiemelt fontosságú a gyár folyamatos termelése, így szakmailag igazi kihívást és felelősséget jelent a gyár területén végzett tevékenységünk.
+    </p>
+  </div>
+  <div class="about-right">
+    <p>
+    <%= image_tag "szecnehyilogo_transp.png", alt:"széchényi logó" %>
+    </p>
+    <p class="text-sm text-center">
+      Cégünk két alkalommal is eredményesen szerepelt a Széchenyi 2020 pályázati programban, melyek révén jelentős támogatásban részesültünk infrastrukturális és fejlesztési céljaink megvalósításához.
+    </p>
+    <a href="#" class="btn btn-primary btn-hero">
+      Tovább olvasom...
+    </a>
+  </div>
+</div>
+</body>
+
+
+

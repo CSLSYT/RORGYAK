@@ -10,5 +10,9 @@ class KpController < ApplicationController
   end
   
   def joinourteam
-  end 
+  end
+
+  def about
+  end
+
 end

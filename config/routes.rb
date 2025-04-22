@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get "kp/contact"
   get "kp/joinourteam"
   resources :job_applications, only: [:new, :create]
-  get 'thanks', to: 'pages#thanks'  
+  get 'thanks', to: 'pages#thanks'
+  mount RailsAdmin::Engine => '/kp/admin', as: 'rails_admin'
+  get 'kp/about', to: 'kp#about'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

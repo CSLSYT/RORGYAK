@@ -11,6 +11,8 @@ gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem 'rails_admin', '~> 3.0'
+
 gem "importmap-rails"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
@@ -57,3 +59,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+gem "cssbundling-rails"
+
+
+gem "cssbundling-rails"
+gem "cssbundling-rails"
