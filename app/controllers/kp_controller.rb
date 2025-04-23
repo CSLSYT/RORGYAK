@@ -15,4 +15,7 @@ class KpController < ApplicationController
   def about
   end
 
+  def grants
+  end
+
 end

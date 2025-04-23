@@ -8,6 +8,7 @@
     --primary-color: #0069C4;
     --font-color: #475057;
     --light-color: #C2CCC5;
+    --box-bg-color: #E8E8E8;
     --background-dark-color: rgb(34, 34, 34);
 }
 body{
@@ -185,6 +186,14 @@ footer{
     background: var(--background-dark-color);
 }
 
+.section-divider{
+    height: 1px;
+    background-color: var(--light-color);
+    margin: 0 auto 0 auto;
+    width: 1400px;
+    display: flex;
+    }
+
 /*Reference Classes*/
 
 .search-bar-container{
@@ -199,6 +208,10 @@ footer{
     gap: 2rem;
     align-items: flex-start;
     margin: 2rem;
+    background-color: var(--box-bg-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .project-image img {
@@ -247,9 +260,73 @@ footer{
     display: block;
 }
 
+.team-columns{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
 
+.team-column{
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+}
 
+.equipment-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
 
+.equipment-item{
+    flex: 1;
+    min-width: 25%;
+    max-width: 25%;
+    background-color: var(--box-bg-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.equipment-item img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/*Grants Classes*/
+
+.grants-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-end;
+    margin-bottom: 100px;
+}
+
+.grants-item{
+    flex: 1;
+    min-width: 32%;
+    max-width: 32%;
+    background-color: var(--box-bg-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.grants-item img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1px;
+}
 
 /*Text Classes*/
 
@@ -289,3 +366,7 @@ footer{
 .text-justify{
     text-align: justify;
 }
+.text-600{
+    font-weight: 600;
+}
+

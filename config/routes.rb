@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'thanks', to: 'pages#thanks'
   mount RailsAdmin::Engine => '/kp/admin', as: 'rails_admin'
   get 'kp/about', to: 'kp#about'
+  get 'kp/grants', to: 'kp#grants'
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
