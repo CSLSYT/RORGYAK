@@ -1,66 +1,61 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Álláspályázat</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Álláspályázat</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="KP Kft logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="#">Referenciák</a></li>
-                <li><a href="#">Álláslehetőségek</a></li>
-                <li><a href="#">Pályázatok</a></li>
-                <li><a href="#">Kapcsolat</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section class="contact-form">
-        <h2>Csatlakozzon csapatunkhoz</h2>
-        <form>
-            <label for="name">Név</label>
-            <div>
-                <input type="text" id="first-name" placeholder="Vezetéknév">
-                <input type="text" id="last-name" placeholder="Keresztnév">
-            </div>
-            
-            <label for="email">E-mail*</label>
-            <input type="email" id="email" required>
-            
-            <label for="phone">Telefonszám*</label>
-            <input type="tel" id="phone" required>
-            
-            <label for="position">Betöltetlen pozíciónk*</label>
-            <select id="position">
-                <option>Kérem válasszon!</option>
-                <option>Projektvezető</option>
-                <option>Nehézgépkezelő</option>
-            </select>
-            <p>
-            <label for="cv">Önéletrajz</label>
-            <input type="file" id="cv">
-            
-            <label for="message">Személyes üzenet*</label>
-            <textarea id="message" required></textarea>
-            
-            <p>A csillaggal * jelölt mezők kitöltése kötelező!</p>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-    
-    <footer>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">News</a>
-            <a href="#">Read Me</a>
-        </nav>
-    </footer>
+
+<section class="join-form">
+  <div class="join-header">
+    <p class="text-xl">Álláslehetőségek</p>
+  </div>
+
+  <div class="join-container">
+    <div class="container join-data">
+      <div class="text-md text-600">
+        <p>Építsd velünk a jövőt – jelentkezz most!</p>
+      </div>
+      <div>
+        <p class="text-justify">Csatlakozz csapatunkhoz, ahol a stabil munkahely, a versenyképes fizetés és a korrekt
+          munkakörülmények nem ígéret, hanem alapelv! Nálunk a szakmai tudás érték, az elhivatottság pedig kulcs a közös
+          sikerhez. Többféle pozíció közül választhatsz – mindegyikhez biztos háttér, modern eszközpark és támogató
+          közösség tartozik. Ha megbízható vagy, értesz a szakmádhoz, és hosszú távra tervezel, nálunk a helyed!</p>
+      </div>
+      <div class="join-form">
+        <%= form_tag send_job_application_path, method: :post, class: "join-form" do %>
+
+          <%= text_field_tag :name, nil, placeholder: "Teljes név", class: "join-inputs", required: true %>
+          <%= email_field_tag :email, nil, placeholder: "Email", class: "join-inputs", required: true %>
+          <%= telephone_field_tag :phone, nil, placeholder: "Telefonszám", class: "join-inputs", required: true %>
+
+          <%= select_tag :position, options_for_select([
+                                                         ['Válassz egyet...', '', { disabled: true, selected: true }],
+                                                         ['Gépkezelő', 'Gépkezelő'],
+                                                         ['Művezető / brigádvezető', 'Művezető / brigádvezető'],
+                                                         ['Beszerzési munkatárs', 'Beszerzési munkatárs'],
+                                                         ['Projektvezető', 'Projektvezető'],
+                                                         ['Irodai asszisztens', 'Irodai asszisztens']
+                                                       ]), class: "join-inputs", required: true %>
+
+          <%= text_field_tag :document, nil, placeholder: "Fájlnév (nem kötelező)", class: "join-inputs" %>
+
+          <%= text_area_tag :message, nil, placeholder: "Üzenet", class: "join-inputs", required: true %>
+
+          <%= submit_tag "Küldés", class: "btn btn-hero btn-primary" %>
+        <% end %>
+
+        <% if flash[:notice] %>
+          <p class="flash-success"><%= flash[:notice] %></p>
+        <% elsif flash[:alert] %>
+          <p class="flash-error"><%= flash[:alert] %></p>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</section>
 </body>
 </html>

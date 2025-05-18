@@ -22,8 +22,12 @@
   </script>
 </head>
 <body>
-<section class="container">
-    <h2 class="text-xl">Referencia Munkáink</h2>
+<section class="search-bar-container">
+  <p class="text-xl">Referencia Munkáink</p>
+  <div class="text-md">
+    <%= will_paginate @works %>
+  </div>
+
 </section>
 
 <section class="container">
@@ -32,12 +36,12 @@
     <div class="" id="<%= dom_id(work) %>">
       <div class="project-container">
 
-    <div class="project-image">
-      <%= image_tag "munka1.jpg", alt: "Project Image" %>
-    </div>
+        <div class="project-image">
+          <%= image_tag "munka1.jpg", alt: "Project Image" %>
+        </div>
 
         <div class="project-description">
-          <p><strong>Description:</strong><%=work.description%>  </p>
+          <p><strong>Description: </strong><%= work.description %>  </p>
         </div>
         <div class="project-details">
           <p><strong>Name:</strong> <%= work.name %></p>
@@ -48,12 +52,11 @@
           <p><strong>Architect:</strong> <%= work.architect %></p>
         </div>
       </div>
-  </div>
+    </div>
 
   <% end %>
 
 </section>
-
 
 </body>
 </html>

@@ -1,93 +1,93 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= content_for(:title) || "Kitalált Közmű" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title><%= content_for(:title) || "Kitalált Közmű" %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "rails_admin", "data-turbo-track": "reload" %>
-
-
-    <%= javascript_importmap_tags %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "rails_admin", "data-turbo-track": "reload" %>
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <%= yield :head %>
-
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
-<%= favicon_link_tag 'favicon.png', rel: 'icon', type: 'image/png' %>
+  <%= javascript_importmap_tags %>
 
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app %>
-  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <body  class="fade-in">
-  <nav class="navbar text-md">
-    <div class="container">
-      <div class="logo">
-        <a href="/kp/home">
-          <%= image_tag "favicon.png", alt:"Weboldal logo" %>
-        </a>
-      </div>
-      <div class="main-menu">
-        <ul>
-          <li>
-            <a href="/kp/reference">Referenciák</a>
-          </li>
-          <li>
-            <a href="#">Álláslehetőségek</a>
-          </li>
-          <li>
-            <a href="/kp/grants">Pályázatok</a>
-          </li>
-          <li>
-            <a href="/kp/about">Céginformációk</a>
-          </li>
-          <li>
-            <a class="btn" href="/kp/contact">Kapcsolat</a>
-          </li>
-        </ul>
+  <%= yield :head %>
 
-      </div>
+  <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+  <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+  <%= favicon_link_tag 'favicon.png', rel: 'icon', type: 'image/png' %>
+
+
+  <%# Includes all stylesheet files in app/assets/stylesheets %>
+  <%= stylesheet_link_tag :app %>
+</head>
+
+<body class="fade-in">
+<nav class="navbar text-md">
+  <div class="container">
+    <div class="logo">
+      <a href="/kp/home">
+        <%= image_tag "favicon.png", alt: "Weboldal logo" %>
+      </a>
     </div>
-  </nav>
-    <%= yield %>
-  </body>
-  <!---Footer--->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-logo">
+    <div class="main-menu">
+      <ul>
+        <li>
+          <a href="/kp/reference">Referenciák</a>
+        </li>
+        <li>
+          <a href="/kp/joinourteam">Álláslehetőségek</a>
+        </li>
+        <li>
+          <a href="/kp/grants">Pályázatok</a>
+        </li>
+        <li>
+          <a href="/kp/about">Céginformációk</a>
+        </li>
+        <li>
+          <a class="btn" href="/kp/contact">Kapcsolat</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<%= yield %>
+</body>
+<!---Footer--->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">
         <a href="/kp/home">
           <%= image_tag "logowhite_800x173.png", :alt => "logo szoveggel" %>
         </a>
-        </div>
-          <h3 class="text-md">
-            Központi telephely nyitvatartás:
-          </h3>
-        <p class="text-sm">
-          H-P: 9:00 - 17:00
-        </p>
-        <p class="text-sm">
-          Sz-V: Zárva
-        </p>
-        <p class="text-sm">
-          Iroda címe: 1117, Budapest, Magyar Tudósok Körútja 2-Q épület
-        </p>
-        <p class="text-sm">
-          Telefonszám: +36 1 234 5000
-        </p>
       </div>
+      <h3 class="text-md">
+        Központi telephely nyitvatartás:
+      </h3>
+      <p class="text-sm">
+        H-P: 9:00 - 17:00
+      </p>
+      <p class="text-sm">
+        Sz-V: Zárva
+      </p>
+      <p class="text-sm">
+        Iroda címe: 1117, Budapest, Magyar Tudósok Körútja 2-Q épület
+      </p>
+      <p class="text-sm">
+        Telefonszám: +36 1 234 5000
+      </p>
     </div>
-  </footer>
+  </div>
+</footer>
 </html>

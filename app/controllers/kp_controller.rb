@@ -3,12 +3,12 @@ class KpController < ApplicationController
   end
 
   def reference
-    @works = Work.all
+    @works = Work.paginate(page: params[:page], per_page: 3)
   end
 
   def contact
   end
-  
+
   def joinourteam
   end
 
@@ -17,5 +17,4 @@ class KpController < ApplicationController
 
   def grants
   end
-
 end

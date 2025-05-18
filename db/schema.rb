@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_16_204537) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_18_232122) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,6 +39,28 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_16_204537) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "job_applications", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "position"
+    t.string "document"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jobapps", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "position"
+    t.string "document"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "join_our_teams", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "vnev"
     t.string "knev"
@@ -46,6 +68,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_16_204537) do
     t.string "phone"
     t.string "position"
     t.string "resume"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "caption"
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
