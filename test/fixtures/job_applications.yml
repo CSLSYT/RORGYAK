@@ -1,17 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  email: MyString
-  phone: MyString
-  position: MyString
-  document: MyString
-  message: MyText
-
-two:
-  name: MyString
-  email: MyString
-  phone: MyString
-  position: MyString
-  document: MyString
-  message: MyText
+  name: Teszt Elek
+  email: teszt@example.com
+  phone: "123456789"
+  position: Ruby fejlesztő
+  message: Ez egy próbaüzenet.
