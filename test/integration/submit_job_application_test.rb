@@ -2,21 +2,21 @@ require "test_helper"
 
 class SubmitJobApplicationTest < ActionDispatch::IntegrationTest
   test "can submit job application form" do
-    get new_job_application_path
+    get new_job_application_url
     assert_response :success
 
-    post job_applications_path, params: {
+    post job_applications_url, params: {
       job_application: {
-        name: "Integráció Béla",
+        name: "Béla",
         email: "bela@example.com",
-        phone: "000",
+        phone: "123456",
         position: "Tesztelő",
-        message: "Teszt üzenet"
+        message: "Ez egy teszt"
       }
     }
 
     follow_redirect!
     assert_response :success
-    assert_select "body", /Sikeres jelentkezés|Köszönjük/i
+    assert_match "Köszönjük", @response.body
   end
 end

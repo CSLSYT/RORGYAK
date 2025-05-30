@@ -1,22 +1,11 @@
 class KpController < ApplicationController
-
-  skip_before_action :verify_authenticity_token, only: [:reference]
-  def home
-  end
+  skip_forgery_protection
 
   def reference
-    @works = Work.paginate(page: params[:page], per_page: 3)
-  end
-
-  def contact
+    render plain: "Referencia oldal"
   end
 
   def joinourteam
-  end
-
-  def about
-  end
-
-  def grants
+    @job_application = JobApplication.new
   end
 end

@@ -1,6 +1,5 @@
 require "test_helper"
 
-
 class JobApplicationsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get new_job_application_url
