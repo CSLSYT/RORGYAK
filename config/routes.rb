@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get "job_application/index", to: 'job_application#index', as: 'job_applications_index'
   get "job_application/show/:id", to: 'job_application#show', as: 'job_application_show'
 
+  resources :contacts, only: [:index, :create]
+  resources :messages, only: [:new, :create]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

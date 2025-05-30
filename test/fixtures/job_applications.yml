@@ -1,8 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+#Test fixture for job applications
 one:
   name: Teszt Elek
   email: teszt@example.com
   phone: "123456789"
   position: Ruby fejlesztő
-  message: Ez egy próbaüzenet.
+  message: Ez egy teszt.
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

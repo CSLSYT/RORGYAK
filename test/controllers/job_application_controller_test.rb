@@ -1,18 +1,26 @@
 require "test_helper"
 
-class JobApplicationControllerTest < ActionDispatch::IntegrationTest
-  test "should get create" do
-    get job_application_create_url
+
+class JobApplicationsControllerTest < ActionDispatch::IntegrationTest
+  test "should get new" do
+    get new_job_application_url
     assert_response :success
+    assert_select "form"
   end
 
-  test "should get index" do
-    get job_application_index_url
-    assert_response :success
-  end
+  test "should create job application" do
+    assert_difference("JobApplication.count") do
+      post job_applications_url, params: {
+        job_application: {
+          name: "Teszt Béla",
+          email: "bela@example.com",
+          phone: "321",
+          position: "Tesztelő",
+          message: "Üzenet"
+        }
+      }
+    end
 
-  test "should get show" do
-    get job_application_show_url
-    assert_response :success
+    assert_redirected_to thanks_url
   end
 end
