@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:index, :create]
   resources :messages, only: [:new, :create]
+  resources :job_applications, only: [:new, :create]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
